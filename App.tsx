@@ -1,10 +1,12 @@
-import { View } from "react-native";
+import React from "react";
 import { Home } from "./app/pages";
+import { store } from "./app/redux/store/store";
+import { Provider} from 'react-redux'
 
 export default function App() {
   return (
-    <View className='flex flex-1'>
+    <Provider store={store}>
       <Home />
-    </View>
+    </Provider>
   );
 }
