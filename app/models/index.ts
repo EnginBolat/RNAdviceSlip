@@ -1,0 +1,1 @@
+export type { Slip as Slip } from './slip.model';
