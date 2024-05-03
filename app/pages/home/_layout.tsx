@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store/store";
 import { randomAdvice } from "../../redux/actions";
 import { ApiError, Loading } from "../../components";
+import { StatusBar } from "expo-status-bar";
 
 export default function Home() {
     const dispatch = useDispatch<AppDispatch>();
@@ -16,6 +17,7 @@ export default function Home() {
     return loading
         ? <Loading />
         : <View className="flex flex-1 justify-center items-center bg-slate-900 p-5">
+            <StatusBar style="light" />
             <Text className="text-xl font-semibold text-white">#{slip?.slip.id}</Text>
             <Text className="text-2xl text-white text-center font-bold">{slip?.slip.advice}</Text>
         </View>
